@@ -15,6 +15,8 @@ In this course, we go over the models of backend architechture and introduce Nod
 <li>Middleware</li>
 </ul>
 
+Many thanks to our friends at Girl Develop It for the starter slides!!
+
   ## For contributors
 
   ### Pull requests
