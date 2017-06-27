@@ -8,8 +8,8 @@
 
 		<meta name="description" content="This is an introduction to node.js curriculum, developed by Emma for the Boston chapter.
 
-        The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
-		<meta name="author" content="Girl Develop It">
+        The course was adapted by the AnnieCannons team to incorporate additional concepts and understandings. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+		<meta name="author" content="Girl Develop It and AnnieCannons">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -40,6 +40,10 @@
             <section>
                 <h3>Server-side Development with Node.js</h3>
                 <img src="images/nodejs.png" alt="">
+            </section>
+
+            <section>
+                <h2>What do backend languages do?</h2>
             </section>
 
             <section>
@@ -93,12 +97,24 @@
             <section>
                 <h3>But what does that mean?</h3>
                 <ul>
-                    <li class="fragment">Low barrier to entry - if you know Javascript, you'll learn Node in no time</li>
+                    <li class="fragment">Low barrier to entry - if you know JavaScript, you'll learn Node in no time</li>
                     <li class="fragment">It gives you only what you need</li>
                     <li class="fragment">Great community and lots of open source node modules</li>
                     <li class="fragment">It's very fast at I/O operations</li>
                 </ul>
                 <img class="fragment" src="images/node-fundamentals.jpg" alt="Node Network">
+            </section>
+
+            <section>
+                <h2>What does it actually do?</h2>
+                <ol>
+                    <li class="fragment">Better ways to organize our code into reusable pieces</li>
+                    <li class="fragment">Ways to deal with files</li>
+                    <li class="fragment">Ways to deal with databases</li>
+                    <li class="fragment">The ability to communicate over the internet</li>
+                    <li class="fragment">The ability to accept requests and send responses</li>
+                    <li class="fragment">The ability to deal with things that take a long time</li>
+                </ol>
             </section>
 
             <section>
@@ -112,19 +128,47 @@
             </section>
 
             <section>
-                <h2>Some terms!</h2>
+                <h2>Let's watch this</h2>
+                <p>Thanks Phillip!</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8aGhZQkoFbQ" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section>
+                <h2>Single Threaded</h2>
+                <p class="fragment">Node doesn’t pause for things to complete, it keeps running other processes when events take place, it is NON-BLOCKING EVENT-DRIVEN</p>
+                <p class="fragment">Other programming languages have to have multiple threads to handle this type of concurrency but Node is single-threaded and uses its event loop to manage</p>
+                <p class="fragment">YAY CALLBACKS</p>
+            </section>
+
+            <section>
+                <img src="images/gosslingCallback.png" alt="Ryan Gosling asking for a callback">
+            </section>
+
+             <section>
+                <h2>Asyc</h2>
+                <p>Node does things asynchronously. V8 does not. (JS is also synchronous, but we have tricks!)</p>
+                <img src="images/eventloop.png" alt="Node's Event Loop">
+            </section>
+
+            <section>
+                <h2>Node is made of...</h2>
                 <ul>
-                    <li class="fragment"><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">Event-driven</a></li>
-                    <li class="fragment">Non-blocking</li> 
-                    <li class="fragment">Concurrent connections</li>
-                    <li class="fragment">V8 engine</li>
+                    <li class="fragment">libuv (C++), a high performace, cross-platform evented I/O library</li>
+                    <li class="fragment">V8</li>
+                    <li class="fragment">Custom JS and C++ written for the platform</li>
+                    <img class="fragment" src="images/GBbB3.png" alt="Node and C++ Core">
                 </ul>
             </section>
 
             <section>
-                <h2>Diagram</h2>
-                <p>V8 Engine</p>
-                <img src="images/GBbB3.png" alt="Node and C++ Core">
+                <h2>Review terms!</h2>
+                <ul>
+                    <li class="fragment">Event-driven</li>
+                    <li class="fragment">Non-blocking</li> 
+                    <li class="fragment">Concurrent connections</li>
+                    <li class="fragment">V8 engine</li>
+                    <li class="fragment">Levels of abstraction and machine code</li>
+                </ul>
             </section>
 
             <section>
@@ -137,18 +181,17 @@
                 <h3>Node REPL Shell</h3>
                 <ul>
                     <li>REPL: Read-Eval-Print Loop</li>
-                    <li>Go to your Terminal and type in `node`</li>
-                    <li>This will open an interactive node shell where you can execute any Javascript</li>
-                    <li>To exit type ctrl+c two times</li>
+                    <li class="fragment">Go to your Terminal and type in `node`</li>
+                    <li class="fragment">This will open an interactive node shell where you can execute any Javascript</li>
+                    <li class="fragment">To exit, type ctrl+c two times</li>
                 </ul>
-                <pre><code>
+                <pre class="fragment"><code>
 > var string = 'hello';
 > string
 'hello'
 > string + ' world'
 'hello world'
                 </code></pre>
-                <p>Type ctrl + C to exit</p>
             </section>
 
             <section>
@@ -163,12 +206,22 @@
             </section>
 
             <section>
+                <h2>A handy visual</h2>
+                <img src="images/repl.png" alt="Visual of REPL loop">
+            </section>
+
+            <section>
+                <h2>REPL</h2>
+                <p>How would you test a boolean in Node's REPL?</p>
+            </section>
+
+            <section>
                 <h3>Exercise</h3>
-                <p>Let's write your first Node.js program. Git clone the <a href="https://github.com/enspencer/gdi-node-class1">gdi-node-class1 repository</a>. Inside that gdi-node-class1 directory make a new file called main.js. Place this code inside.</p>
+                <p>Let's write your first Node.js program. Create a new folder called "Node_Practice". Inside that directory make a new file called main.js. Place this code inside.</p>
                 <pre><code>
 console.log('Hello World!');
 				</code></pre>
-                <p>Save that file by clicking command+s and go to your Terminal. Type in the following and hit enter.</p>
+                <p>Save that file by clicking command+s and go to your Terminal in your IDE. Type in the following and hit enter.</p>
                 <pre><code>
 node main.js
                 </code></pre>
@@ -177,11 +230,12 @@ node main.js
             <section>
                 <h3>Congrats!</h3>
                 <p>You just executed your first node.js program. Now for the cool stuff.</p>
+                <img src="images/dance.gif" alt="Dancing Storm Troopers">
             </section>
 
             <section>
                 <h3>Let's Put the I in I/O</h3>
-                <p>Add a new file in your gdi-node-class1 directory called 'dinosaurs.txt'. Copy this list of awesome dinosaurs and paste it in your file: https://gist.github.com/enspencer/d9ddf51913f4841ec14f</p>
+                <p>Add a new file in your Node_Practice directory called 'dinosaurs.txt'. Copy <a href="https://gist.github.com/enspencer/d9ddf51913f4841ec14f">this </a> list of awesome dinosaurs and paste it in your file.</p>
                 <p>Go back to your main.js file.</p>
                 <pre><code>
 var fs = require('fs');
@@ -196,6 +250,57 @@ fs.readFile(cwd + '/dinosaurs.txt', function(err, data) {
     node main.js
                 </code></pre>
                 </p>
+            </section>
+
+            <section>
+                <h2>What is going on?</h2>
+                <p>We used a module to pull in code, read an external text file, and converted the contents of that file from a Buffer to a string</p>
+                <img class= "fragment" src="images/awkward.gif" alt="Awkward">
+            </section>
+
+            <section>
+                <h2>Modules</h2>
+                <p class="fragment">A module is a JavaScript library/file that you can import into other code using Node's require() function.</p>
+                <p class="fragment">The require function is part of CommonJS.</p>
+            </section>
+
+            <section>
+                <h2>Types of modules</h2>
+                <p>Node has three sources of modules</p>
+                <ol>
+                    <li class="fragment">Built-in modules, like 'fs' for the filesystem, 'http' for accessing the web, and 'os' for accessing the operating system</li>
+                    <li class="fragment">Your project files</li>
+                    <li class="fragment">NPM</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Using require()</h2>
+                <p class="fragment">You can do require for a sub-folder require(“./other/foo”) as well as up and over require(“../lib/over”)</p>
+                <p class="fragment">GREET EXAMPLE</p>
+            </section>
+
+            <section>
+                <h2>Creating your own modules</h2>
+                <p class="fragment">You will want to create your own modules, because this allows you to organise your code into managable parts — a monolithic single-file application is hard to understand and maintain.</p> 
+                <p class="fragment">Using modules also helps you manage your namespace, because only the variables you explicitly export are imported when you use a module.</p>
+                <p class="fragment">You can do module.export multiple times in the same file</p>
+            </section>
+    
+            <section>
+                <h2>Modules</h2>
+                <p>Resources</p>
+                <ul>
+                    <li class="fragment"><a href="https://nodejs.org/api/modules.html#modules_modules">Document 1</a></li>
+                    <li class="fragment"><a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/">Document 2</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>ES6 Alert!</h2>
+                <p class="fragment">ES6 has a new way of creating modules in JavaScript, this is something that most languages has but JS has not taken advantage of until now.</p>
+                <p class="fragment">ES6 modules have the same principle (ie having code in modules and then letting certain parts be accessed)</p>
+                <p class="fragment">This hasn't been added into Node yet, but peeps are working on it</p>
             </section>
 
             <section>
@@ -216,7 +321,7 @@ fs.readFile(cwd + '/dinosaurs.txt', function(err, data) {
             <section>
                 <h3>What did we just do?</h3>
                 <ul>
-                    <li>Used fs, one of node's core modules</li>
+                    <li>Used fs, one of Node's core modules</li>
                     <li>Read an external text file</li>
                     <li>Converted the contents of that file from a Buffer to a string</li>
                 </ul><p></p>
@@ -226,18 +331,21 @@ fs.readFile(cwd + '/dinosaurs.txt', function(err, data) {
 
             <section>
 				<h3>What the heck is a buffer?</h3>
-                <p>From the node docs:</p>
-                <pre><code>
-Pure JavaScript is Unicode friendly but not nice to binary data. When dealing with TCP streams or the file system, it's necessary to handle octet streams. Node.js has several strategies for manipulating, creating, and consuming octet streams.
-
-Raw data is stored in instances of the Buffer class. A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.
-                </code></pre>
-            <p>What we care about is that a Buffer is a byte array that can be converted to a human-readable string by adding .toString()</p>
+                <p class="fragment">A buffer is a temporary holding spot for data being moved from place to another. Enough data has to be collected in order to perform a specific process with it (like buffering a video!). </p>
+                <p class="fragment">JS can work with Unicode but it isn't too great with binary data. When dealing with TCP streams (moving files across the Internet) or the file system, it's necessary to handle octet streams (binary data flow). </p>
+                <p class="fragment">Node has several strategies for manipulating, creating, and consuming octet streams.</p>
 			</section>
 
             <section>
+                <h2>Buffer</h2>
+                <p class="fragment">Raw data is stored in instances of the Buffer class. </p>
+                <p class="fragment">What we care about is that a Buffer is a byte array that can be converted to a human-readable string by adding .toString()</p>
+                <p class="fragment">ES6 is adding some new features to make this a bit easier. Stay tuned!</p>
+            </section>
+
+            <section>
 				<h3>Let's Develop It</h3>
-                <p>In your main.js file, change 'dinosaurs.txt' to 'people.json' and paste the json from here: https://gist.github.com/enspencer/b58d6b190505d278b0e9</p><br>
+                <p>In your main.js file, change 'dinosaurs.txt' to 'people.json' and paste the json from <a href="https://gist.github.com/enspencer/b58d6b190505d278b0e9">here</a>: </p>
                 <p>We can use the same fs.readFile function to read JSON. Remember we need to convert the Buffer to a string. This time we'll also parse that string back into JSON.</p>
                 <pre><code>
 fs.readFile(cwd + '/curriculum/class1/people.json', function(err, data) {
@@ -248,7 +356,6 @@ fs.readFile(cwd + '/curriculum/class1/people.json', function(err, data) {
 			</section>
             <section>
                 <h3>Parsing JSON</h3>
-
                 <p>Now use your Javascript knowledge to select individual people in the object.</p>
                 <pre><code>
 data.people
@@ -261,8 +368,8 @@ data.people[0]
 
             <section>
 				<h3>Next up: A simple HTTP server</h3>
-                <p>We're going to use node's http module to create a server. Create a new file called server.js</p>
-                <pre><code>
+                <p class="fragment">We're going to use node's http module to create a server. Create a new file called server.js</p>
+                <pre class="fragment"><code>
 var http = require('http');
 http.createServer(function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -271,8 +378,62 @@ http.createServer(function(req, res) {
 
 console.log('Server running on port 9000');
                 </code></pre>
-                <p>Now run your progam again and in your browser navigate to localhost:9000</p>
+                <p class="fragment">Now run your progam again and in your browser navigate to localhost:9000</p>
 			</section>
+
+            <section>
+                <h2>DANCE PARTY</h2>
+                <p>You just wrote your first web app! Node is launching a web server locally. You now have a web server running on your computer.</p>
+                <img src="images/genius.gif" alt="Gif of Genius">
+            </section>
+
+            <section>
+                <h2>HTTP and Headers</h2>
+                <p>Information about what is being transmitted and what type of information(MIME type)</p>
+                <img src="images/response.png" alt="Example of HTTP response">
+                <p>MIME stands for Multipurpose Internet Mail Extensions. Read more <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">here </a></p>
+            </section>
+
+            <section>
+                <h2>Ports</h2>
+                <p>Ports are used to route web traffic. You can use them for all kinds of tasks.</p>
+                <p class="fragment">For dev purposes, try to keep it over 1000.</p>
+                <p class="fragment">A port and an IP together make a web socket. Sockets can be left open or closed.</p>
+                <img class="fragment" src="images/ports.png" alt="Diagram of Port Numbers">
+            </section>
+
+            <section>
+                <h2>Breaking down the rest of the code</h2>
+                <ul>
+                    <li class="fragment">Requiring the HTTP library</li>
+                    <li class="fragment">We then ask HTTP to create a webserver for us. (you don't need to write any more code than that!)</li>
+                    <li class="fragment">The server receives a request and gives a response</li>
+                    <li class="fragment"> For this program we are only worrying about the response. This is sent with a header that says, "hey browser, given 200, here is what I will be giving you"</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Breaking down the rest of the code</h2>
+                <ul>
+                    <li class="fragment"> We are just giving  text in this example. We could be sending html/css/json or other things.</li>
+                    <li class="fragment"> .end will end the response and serve up all the data (in this case "Hello World") and finish. .end wraps up all your data and sends it back</li>
+                    <li class="fragment">Chaining!</li>
+                    <li class="fragment">Port listening</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Listeners</h2>
+                <p class="fragment">In the browser, the JS event loop is constantly listening with its event loop (for when events are triggered in the DOM)</p>
+                <p class="fragment"> The same happens in Node! There are listeners (like http requests or internal events, responding to a request)</p>
+            </section>
+
+            <section>
+                <h2>Nodemon</h2>
+                <p class="fragment">Allow changes without having to stop and restart server</p>
+                <p class="fragment">npm install -g nodemon</p>
+                <p class="fragment">Run nodemon main.js and try making changes!</p>
+            </section>
 
             <section>
                 <h3>Putting it all together</h3>
@@ -286,9 +447,89 @@ console.log('Server running on port 9000');
             </section>
 
             <section>
+                <h2>NPM: Node Package Manager</h2>
+                <p class="fragment" style="text-align:left">Utility for downloading packages for Node.js applications</p>
+                <p class="fragment" style="text-align:left">Can use to install front-end code, add dependencies, and build tools too!</p>
+                <p class="fragment" style="text-align:left"><a href="https://www.npmjs.com/">Check out the website</a></p>
+                <img class="fragment" src="images/npm.png" alt="NPM logo">
+            </section>
+
+            <section>
+                <h2>Package vs Module</h2>
+                <p class="fragment">Difference between a module and a package?</p>
+                <p class="fragment">A module is a single JS file that has some functionality and won’t impact other code in the rest of the application unintentionally.</p>
+                <p class="fragment">A package is a directory with one or more modules inside of it and a package.json file that has information about the modules inside</p>
+            </section>
+
+            <section>
+                <h2>Using NPM</h2>
+                <p>Finding a project online or collaborating</p>
+                <ul>
+                    <li class="fragment">Clone the project that you want to work on with git (or sourcetree) and make sure it has a package.json</li>
+                    <li class="fragment">Then navigate to directory that has the source code.</li>
+                    <li class="fragment">Then type "npm install" in the Terminal. This will load your dependencies.</li>
+                    <li class="fragment">Then run the "npm start" command. This will only work if the program you downloaded has a start script.</li>
+                    <li class="fragment"><a href="https://docs.npmjs.com/misc.config"></a>List of shorthands</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Exercise</h2>
+                <p>Clone <a href='https://github.com/whiver/PIRATES.git'> this </a> repo, install npm, and start the npm scripts</p>
+                <img src="images/aziz.gif" alt="Aziz Ansari">
+            </section>
+
+            <section>
+                <h2>Using NPM</h2>
+                <p>Starting your own project</p>
+                <ul>
+                    <li class="fragment">Creating a package.json. This will track dependencies you are using in the project, and is an easy way to create scripts (instead of using tools like grunt and gulp)</li>
+                    <li class="fragment">The command is "npm init" in the directory you want.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Global Packages</h2>
+                <p class="fragment">A global package allows that package to be able to create commands that can be used in the command line (like yarn or grunt or gulp. It can be used across your projectson your computer.</p>
+                <p class="fragment">Command for seeing the global packages on your computer: npm list -g --depth 0 </p>
+            </section>
+
+            <section>
+                <h2>Exercise</h2>
+                <p>Create a package.json file for the Node_practice project we worked on</p>
+                <img src="images/pirate.gif" alt="Johnny Depp Gif">
+            </section>
+
+            <section>
+                <h2>Semantic Versioning</h2>
+                <p>There is a structure to how developers keep track of the iterations of a package or dependency</p>
+                <p class="fragment">Example: 1.8.3 </p>
+                <ul>
+                    <li class="fragment">1 is the "major version" and if this is updated, it will break currently functionality</li>
+                    <li class="fragment">8 is the "minor version" and usually indicates a new feature has been added but functionality is not changed.</li>
+                    <li class="fragment">3 is a patch or small fix.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Checking your versions</h2>
+                <ul>
+                    <li class="fragment">The tilde (~) matches the most recent minor version (the middle number). ~1.2.3 will match all 1.2.x versions but will miss 1.3.0.</li>
+                    <li class="fragment">The caret (^), on the other hand, is more relaxed. It will update you to the most recent major version (the first number). ^1.2.3 will match any 1.x.x release including 1.3.0, but will hold off on 2.0.0.</li>
+                    <li class="fragment">"npm update" will update all of your dependencies that are compatible.</li>
+                </ul>
+            </section>
+
+            <!--<section>
+                <h2>Events and the Event Emitter</h2>
+                <p>An event listener is code that responds to an event, you can have many listeners listening to the same or different events</p>
+                <p>Events act on results as they arrive (vs a callback that does a request and then reply and there are no results until all results)</p>
+            </section>            -->
+
+            <section>
                 <h2>What is Express?</h2>
                 <ul>
-                    <li class="fragment">Most widely used Node.js framework</li>
+                    <li class="fragment">Most widely used Node.js framework. Makes it a billion times easier! (like jQuery for the frontend)</li>
                     <li class="fragment">Most applications are built with express or another framework instead of using bare Node without a framework</li>
                     <li class="fragment">Routing with HTTP request methods</li>
                     <li class="fragment">Requests and responses: Requests made to a certain route will return a page for that specific route</li>
@@ -297,47 +538,107 @@ console.log('Server running on port 9000');
             </section>
 
             <section>
-                <h2>NPM</h2>
-                <p class="fragment" style="text-align:left">Utility for downloading packages for Node.js applications</p>
-                <p class="fragment" style="text-align:left">Creating a package.json file to store dependencies using the command “NPM init” in the app directory on the command line</p>
-                <p class="fragment" style="text-align:left">Can use to install front-end code, add dependencies, and build tools too!</p>
-                <p class="fragment" style="text-align:left"><a href="https://www.npmjs.com/">Check out the website</a></p>
-                <img class="fragment" src="images/npm.png" alt="NPM logo">
+                <h2>Using Express</h2>
+                <p>Navigate to your Node_Practice directory and type npm install express (this is NOT global)</p>
+                <p>Check out your node_modules folder in VSCode</p>
+<pre><code>
+var express = require('express');
+var app = express();
+
+app.get('/hello.txt', function(req, res){
+    res.send("Hello World");
+})
+
+var server = app.listen(8080, function() {
+    console.log('Listening on port 8080');
+})
+
+</code></pre>
             </section>
 
             <section>
-                <h2>Modules</h2>
-                <p>A module is a JavaScript library/file that you can import into other code using Node's require() function. Express itself is a module, as are the middleware and database libraries that we use in our Express applications.</p>
+                <h2>Code Breakdown</h2>
+                <ol>
+                    <li class="fragment">Do I (as Node) have Express? No? Let me find it and bring it into our project.</li>
+                    <li class="fragment">Let me create an instance of express with this express function. The variable 'app' is now how we will operate our web server.</li>
+                    <li class="fragment">Remember HTTP verbs??</li>
+                    <li class="fragment">Everytime someone calls get on this file "hello.txt", we are going to send them "Hello World"</li>
+                    <li class="fragment">Then I will start up an instance of the server!</li>
+                </ol>
             </section>
 
             <section>
-                <h2>Modules</h2>
-                <p>You will want to create your own modules, because this allows you to organise your code into managable parts — a monolithic single-file application is hard to understand and maintain. Using modules also helps you manage your namespace, because only the variables you explicitly export are imported when you use a module.</p>
-                <ul>
-                    <li class="fragment"><a href="https://nodejs.org/api/modules.html#modules_modules">Document 1</a></li>
-                    <li class="fragment"><a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/">Document 2</a></li>
-                </ul>
+                <h2>Routes</h2>
+                <p class="fragment">Express makes it really easy to have routes on your webserver (like to your homepage or about page, etc)</p>
+                <p class="fragment">So, you can have a lot of gets (and posts) for the different pages on your site.</p>
             </section>
 
             <section>
-                <h2>Middleware</h2>
-                <p>Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.</p>
+                <h2>Exercise</h2>
+                <p>Create another get that sends a message to someone using your app in another page.</p>
             </section>
 
             <section>
-                <h2>Middleware</h2>
-                <p>Middleware functions can perform the following tasks:</p>
-                <ul>
-                    <li class="fragment">Execute any code.</li>
-                    <li class="fragment">Make changes to the request and the response objects.</li>
-                    <li class="fragment">End the request-response cycle.</li>
-                    <li class="fragment">Call the next middleware function in the stack.</li>
-                    <li class="fragment"><a href="https://expressjs.com/en/guide/using-middleware.html">Documentation</a></li>
-                </ul>
+                <h2>Static Assets</h2>
+                <p class="fragment">The HTML, CSS, JS, fonts, and images of your website/web app are static assets because they are not changed. They live on your server and need to be sent exactly as they are saved.</p>
+                <p class="fragment">This is done over a "public" directory so you don't have to send each item individually. Thanks Express!</p>
+                <p class="fragment">You don't want your server -side assets to be public, just your static assets.</p>
+            </section>
+
+            <section>
+                <h2>Serving Static Files</h2>
+<pre><code>
+var express = require('express');
+var app = express();
+
+app.use(express.static(__dirname + '/public'));
+
+var server = app.listen(8080);
+
+</code></pre>
+            </section>
+
+            <section>
+                <h2>All together</h2>
+                <p> Git clone <a href="https://github.com/btholt/intro-to-webdev-app.git">this</a> repository, and cd into the node_exercises/static_assets folder</p>
+                <p>Make sure you understand the code, install express, and run the app!</p>
+                <p>Check out the Network tab in the Dev tools</p>
+            </section>
+
+            <section>
+                <h2>Parameters</h2>
+                <p>Sometimes we need to be able to change the content of a page without having to create an entirely new page.</p>
+                <p>IMDB example</p>
+<pre><code>
+var express = require('express');
+var app = express();
+
+app.get('/celebrity/:name', function(req,res){
+    res.setHeader('Content-Type', 'text/plain');
+    res.send("You picked " + req.params.name);
+});
+
+var server = app.listen(8080);
+
+</code></pre>        
+            </section>
+
+            <section>
+                <h2>Practice</h2>
+                <ol>
+                    <li>Trying running npm install --save express (only if this project already has a package.json file.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Posting</h2>
+                <p>Check out node_exercises/posting folder. Run npm install and look at all the code</p>
+                <p class="fragment">Body-parser? Express itself does not understand JSON because it remains flexible to understand other languages (like XML). So this parser gives Express the tools to understand JSON.</p>
             </section>
 
             <section>
                 <h2>Review</h2>
+                <p>Check out the final project app in the code you cloned</p>
                 <a href="https://www.frontendmasters.com">Watch This Node Module in the Web Developer Course!</a>
                 <p>Click here for <a href="https://nodejs.org/api/console.html">Node Documentation</a></p>
             </section>
